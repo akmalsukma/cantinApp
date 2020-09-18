@@ -18,6 +18,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/pesan/{id}', 'HomeController@show');
+Route::get('/pesanan', 'HomeController@cart');
+
+Route::delete('/pesanan/{id}','HomeController@destroy');
+Route::post('/pesan/{id}', 'HomeController@order');
+Route::post('/pesanan/bayar/{id}', 'HomeController@payment');
+
+
 
 //routing view admin
 Route::get('/admin', 'AdminController@index')->name('admin_home');

@@ -15,11 +15,11 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('no_meja');
-            $table->date('tanggal');
             $table->bigInteger('id_user');
-            $table->text('keterangan');
-            $table->enum('status',['menunggu pesanan','sudah menerima pesanan'])->default('menunggu pesanan');
+            $table->bigInteger('id_makanan');
+            $table->date('tanggal');
+            $table->Integer('jumlah_pesan');
+            $table->enum('status',['menunggu pembayaran','sudah melakukan pembayaran'])->default('menunggu pembayaran');
             $table->timestamps();
         });
     }

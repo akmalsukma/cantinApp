@@ -17,6 +17,7 @@ class CreateMakanansTable extends Migration
             $table->bigIncrements('id');
             $table->string('nama_makanan');
             $table->integer('harga');
+            $table->string('gambar');
             $table->enum('status',['ready','sold out'])->default('ready');
             $table->timestamps();
         });

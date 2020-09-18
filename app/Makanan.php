@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Makanan extends Model
 {
     protected $fillable = [
-        'id_makanan','nama_makanan' , 'harga','status'
+        'id','nama_makanan' , 'harga','status'
     ];
+
+    public function order()
+    {
+        return $this->hasMany('App\Order','id_makanan','id');
+    }
 }
